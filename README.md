@@ -1,1 +1,48 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7439793&assignment_repo_type=AssignmentRepo)
+	#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct{
+   int skor;
+   char ad[50];
+}oyuncu;
+
+oyuncu oyuncu1;
+oyuncu oyuncu2;
+
+/*
+void oyuncubilgisi;
+void tabloyaz;
+int sira;
+int secimkoordinat;
+int kazanankontrol;
+*/
+
+
+void oyuncubilgisiyaz(FILE *fbilgi)
+{
+
+    fbilgi=fopen("bilgi.txt","w");
+
+        printf("1. oyuncu adi:");
+        scanf("%s",&oyuncu1.ad);
+oyuncu1.skor=0;
+        printf("2. oyuncu adi:");
+        scanf("%s",&oyuncu2.ad);
+oyuncu2.skor=0;
+         fprintf(fbilgi,"1.nin adi: %s\n skoru%d\n",oyuncu1.ad,oyuncu1.skor);
+         fprintf(fbilgi,"2.nin adi: %s\n skoru%d\n",oyuncu2.ad,oyuncu2.skor);
+
+
+    fclose(fbilgi);
+}
+
+
+
+int main()
+{
+    FILE *fp;
+    oyuncubilgisiyaz(fp);
+	
+	
+	
+	return 0;
